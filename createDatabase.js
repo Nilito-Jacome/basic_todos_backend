@@ -8,7 +8,7 @@ const client = new Client({
   password: process.env.DB_PASSWORD,
   ssl: {
     require: true,
-    rejectUnauthorized: false
+    //rejectUnauthorized: false
   }
 });
 
