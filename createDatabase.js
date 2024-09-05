@@ -6,6 +6,10 @@ const client = new Client({
   port: process.env.DB_PORT,
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
+  ssl: {
+    require: true,
+    rejectUnauthorized: false
+  }
 });
 
 const createDatabase = async () => {
