@@ -7,10 +7,9 @@ const client = new Client({
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  ssl: {
-    require: true,
-    rejectUnauthorized: false
-  }
+  dialect: "postgres",
+    dialectOptions: {
+      ssl: {required: true, rejectUnauthorized: false}},
 });
 
 const createDatabase = async () => {
