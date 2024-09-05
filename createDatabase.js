@@ -9,7 +9,11 @@ const client = new Client({
   database: process.env.DB_DATABASE,
   dialect: "postgres",
     dialectOptions: {
-      ssl: {required: true, rejectUnauthorized: false}},
+      rejectUnauthorized: false,
+    ca: fs.readFileSync('path/to/ca.pem').toString(), // Certificado CA
+    key: fs.readFileSync('path/to/client.key').toString(), // Clave privada del cliente
+    cert: fs.readFileSync('path/to/client.crt').toString() // Certificado del cliente
+    }
 });
 
 const createDatabase = async () => {
