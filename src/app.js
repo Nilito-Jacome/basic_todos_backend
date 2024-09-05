@@ -1,9 +1,9 @@
 const express = require('express');
-const db = require('./utils/database');
+const db = require('../config/database');
 const cors = require('cors');
 require('dotenv').config();
 const useRoutes = require('./routes/todos.routes');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 const syncDatabase = async () => {

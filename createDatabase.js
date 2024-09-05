@@ -7,10 +7,7 @@ const client = new Client({
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  ssl: process.env.DB_SSL === 'true' ? {
-    require: true,  // Requiere SSL para la conexión
-    rejectUnauthorized: false  // Evita errores con certificados autofirmados
-  } : false
+  ssl: process.env.DB_SSL === 'true' ? {rejectUnauthorized: false } : false
 });
 
 const createDatabase = async () => {
